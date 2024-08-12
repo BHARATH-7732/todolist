@@ -1,0 +1,172 @@
+body {
+    font-family: 'Montserrat', 'Helvetica', 'Arial', sans-serif;
+    background: url('https://i.pinimg.com/originals/59/c7/00/59c700ab541d4f40cc01df9b8145d708.jpg') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    color: #fff; 
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.7); /* Adjusted alpha for transparency */
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 400px;
+    box-sizing: border-box;
+}
+
+h1 {
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    color: #444;
+    margin-bottom: 20px;
+    font-size: 1.8em;
+}
+
+.input-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+input[type="text"] {
+    width: 65%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+button {
+    padding: 10px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
+    flex-shrink: 0;
+}
+
+@keyframes addTaskColorAnimation {
+    0%, 100% {
+        background-color: #007bff;
+    }
+    50% {
+        background-color: #0056b3;
+    }
+}
+
+@keyframes completeColorAnimation {
+    0%, 100% {
+        background-color: #28a745;
+    }
+    50% {
+        background-color: #218838;
+    }
+}
+
+@keyframes editColorAnimation {
+    0%, 100% {
+        background-color: #ffc107;
+    }
+    50% {
+        background-color: #e0a800;
+    }
+}
+
+@keyframes deleteColorAnimation {
+    0%, 100% {
+        background-color: #dc3545;
+    }
+    50% {
+        background-color: #c82333;
+    }
+}
+
+#add-task-btn {
+    animation: addTaskColorAnimation 3s infinite;
+}
+
+.complete-btn {
+    animation: completeColorAnimation 3s infinite;
+}
+
+.edit-btn {
+    animation: editColorAnimation 3s infinite;
+}
+
+.delete-btn {
+    animation: deleteColorAnimation 3s infinite;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    background-color: #ffffff;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: black;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    flex-wrap: wrap;
+}
+
+li.completed {
+    border-color: #28a775; 
+}
+
+li.completed::before {
+    content: "✔️ ";
+    margin-right: 5px;
+    color: red;
+}
+
+.task-buttons {
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+.edit-btn.disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+    animation: none;
+}
+
+@media (max-width: 400px) {
+    h1 {
+        font-size: 1.5em;
+    }
+
+    input[type="text"] {
+        width: 60%;
+    }
+
+    button {
+        font-size: 12px;
+        padding: 8px 12px;
+    }
+}
